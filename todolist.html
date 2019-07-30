@@ -311,6 +311,37 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x98DF;&#x836F;&#x76D1;&#x9879;&#x76EE;">&#x98DF;&#x836F;&#x76D1;&#x9879;&#x76EE;</h1>
+<h2 id="201907&#x7B2C;5&#x5468;">201907&#x7B2C;5&#x5468;</h2>
+<h3 id="0802-&#x5468;&#x4E94;"><strong>08.02 &#x5468;&#x4E94;</strong></h3>
+<h3 id="0801-&#x5468;&#x56DB;"><strong>08.01 &#x5468;&#x56DB;</strong></h3>
+<h3 id="0731-&#x5468;&#x4E09;"><strong>07.31 &#x5468;&#x4E09;</strong></h3>
+<ul>
+<li>dingo api </li>
+</ul>
+<h3 id="0730-&#x5468;&#x4E8C;"><strong>07.30 &#x5468;&#x4E8C;</strong></h3>
+<ul>
+<li><p>H5 &#x8868;&#x5355;&#x9A8C;&#x8BC1;</p>
+<pre><code>   checks(id, err) {
+          this.$weui.form.showErrorTips({
+              ele: document.getElementById(id),
+              msg: err
+          })
+     },
+   checkPhone() {
+          var reg = /^1[34578]\d{9}$/;
+          if(this.complaint_phone.length == 0) {
+              this.checks(&quot;complaintPhone&quot;, &apos;empty&apos;);
+          } else if(!reg.test(this.complaint_phone)) {
+              this.checks(&quot;complaintPhone&quot;, &apos;notMatch&apos;);
+          }
+      }
+</code></pre></li>
+</ul>
+<h3 id="0729-&#x5468;&#x4E00;"><strong>07.29 &#x5468;&#x4E00;</strong></h3>
+<ul>
+<li>&#x7EBF;&#x4E0B;&#x6267;&#x6CD5;&#x89C6;&#x9891;&#x64AD;&#x653E;</li>
+<li>&#x7EBF;&#x4E0B;&#x6267;&#x6CD5;&#x67E5;&#x770B;&#x591A;&#x5F20;&#x56FE;&#xFF08;&#x8F6E;&#x64AD;&#xFF09;</li>
+</ul>
 <h2 id="201907&#x7B2C;4&#x5468;">201907&#x7B2C;4&#x5468;</h2>
 <h3 id="0726-&#x5468;&#x4E94;"><strong>07.26 &#x5468;&#x4E94;</strong></h3>
 <h3 id="0725-&#x5468;&#x56DB;"><strong>07.25 &#x5468;&#x56DB;</strong></h3>
@@ -471,7 +502,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TodoList","level":"2.1","depth":1,"next":{"title":"HTML","level":"2.2","depth":1,"path":"html.md","ref":"html.md","articles":[]},"previous":{"title":"Hotyan","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"todolist.md","mtime":"2019-07-22T14:25:22.124Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-22T14:21:35.379Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TodoList","level":"2.1","depth":1,"next":{"title":"HTML","level":"2.2","depth":1,"path":"html.md","ref":"html.md","articles":[]},"previous":{"title":"Hotyan","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"todolist.md","mtime":"2019-07-30T09:21:21.127Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-30T09:25:53.392Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
