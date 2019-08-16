@@ -310,154 +310,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x98DF;&#x836F;&#x76D1;&#x9879;&#x76EE;">&#x98DF;&#x836F;&#x76D1;&#x9879;&#x76EE;</h1>
-<h2 id="201907&#x7B2C;5&#x5468;">201907&#x7B2C;5&#x5468;</h2>
-<h3 id="0802-&#x5468;&#x4E94;"><strong>08.02 &#x5468;&#x4E94;</strong></h3>
-<h3 id="0801-&#x5468;&#x56DB;"><strong>08.01 &#x5468;&#x56DB;</strong></h3>
-<h3 id="0731-&#x5468;&#x4E09;"><strong>07.31 &#x5468;&#x4E09;</strong></h3>
+                                <h2 id="20190816">2019.08.16</h2>
 <ul>
-<li>dingo api </li>
-</ul>
-<h3 id="0730-&#x5468;&#x4E8C;"><strong>07.30 &#x5468;&#x4E8C;</strong></h3>
-<ul>
-<li><p>H5 &#x8868;&#x5355;&#x9A8C;&#x8BC1;</p>
-<pre><code>   checks(id, err) {
-          this.$weui.form.showErrorTips({
-              ele: document.getElementById(id),
-              msg: err
-          })
-     },
-   checkPhone() {
-          var reg = /^1[34578]\d{9}$/;
-          if(this.complaint_phone.length == 0) {
-              this.checks(&quot;complaintPhone&quot;, &apos;empty&apos;);
-          } else if(!reg.test(this.complaint_phone)) {
-              this.checks(&quot;complaintPhone&quot;, &apos;notMatch&apos;);
-          }
-      }
-</code></pre></li>
-</ul>
-<h3 id="0729-&#x5468;&#x4E00;"><strong>07.29 &#x5468;&#x4E00;</strong></h3>
-<ul>
-<li>&#x7EBF;&#x4E0B;&#x6267;&#x6CD5;&#x89C6;&#x9891;&#x64AD;&#x653E;</li>
-<li>&#x7EBF;&#x4E0B;&#x6267;&#x6CD5;&#x67E5;&#x770B;&#x591A;&#x5F20;&#x56FE;&#xFF08;&#x8F6E;&#x64AD;&#xFF09;</li>
-</ul>
-<h2 id="201907&#x7B2C;4&#x5468;">201907&#x7B2C;4&#x5468;</h2>
-<h3 id="0726-&#x5468;&#x4E94;"><strong>07.26 &#x5468;&#x4E94;</strong></h3>
-<h3 id="0725-&#x5468;&#x56DB;"><strong>07.25 &#x5468;&#x56DB;</strong></h3>
-<h3 id="0724-&#x5468;&#x4E09;"><strong>07.24 &#x5468;&#x4E09;</strong></h3>
-<h3 id="0723-&#x5468;&#x4E8C;"><strong>07.23 &#x5468;&#x4E8C;</strong></h3>
-<h3 id="0722-&#x5468;&#x4E00;"><strong>07.22 &#x5468;&#x4E00;</strong></h3>
-<ul>
-<li><p>H5&#x754C;&#x9762;&#xFF08;weui&#xFF09;</p>
-<pre><code>  # &#x4E0B;&#x8F7D;
-  $ npm i weui.js weui -S
-  #main.js&#x5F15;&#x5165;
-  import weui from &apos;weui.js&apos;
-  import &apos;weui&apos;
-  Vue.prototype.$weui = weui
-</code></pre></li>
-<li><p>leancold &#x5B9E;&#x540D;&#x8BA4;&#x8BC1;&#xFF0C;&#x624B;&#x6301;&#x8EAB;&#x4EFD;&#x8BC1;&#x7167;</p>
-</li>
-</ul>
-<p><br>
-<br></p>
-<h2 id="201907&#x7B2C;3&#x5468;">201907&#x7B2C;3&#x5468;</h2>
-<h3 id="0719-&#x5468;&#x4E94;"><strong>07.19 &#x5468;&#x4E94;</strong></h3>
-<ul>
-<li>&#x9700;&#x6C42;&#x8BC4;&#x5BA1;</li>
-</ul>
-<h3 id="0718-&#x5468;&#x56DB;"><strong>07.18 &#x5468;&#x56DB;</strong></h3>
-<ul>
-<li><p>&#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x5DE1;&#x68C0;&#x5355;&#x7684;&#x5DE1;&#x68C0;&#x9879;&#x63A5;&#x53E3;&#xFF1A;</p>
-<pre><code> type&#xFF1A;get
- url&#xFF1A;api/inspectionfileitem/{inspection_id: &apos;&apos; //&#x5DE1;&#x68C0;&#x5355; id}
-</code></pre></li>
-<li><p><del>&#x540C;&#x7EA7;&#x522B;&#x53EF;&#x5220;&#x9664;</del></p>
-</li>
-<li><del>catch()</del></li>
-<li><del>&#x6279;&#x91CF;&#x5220;&#x9664;&#x663E;&#x5F71;&#x6539;&#x662F;&#x5426;&#x53EF;&#x70B9;&#x51FB;</del></li>
-</ul>
-<h3 id="0717-&#x5468;&#x4E09;"><strong>07.17 &#x5468;&#x4E09;</strong></h3>
-<ul>
-<li><p><del>&#x5DE1;&#x68C0;&#x5355;&#x6279;&#x91CF;&#x5220;&#x9664;&#x63A5;&#x53E3;&#xFF1A;</del></p>
-<pre><code> url&#xFF1A;/inspectionfile/batchdelete&#xFF0C;
- type&#xFF1A;POST&#xFF0C;
- params: {ids: &apos;&apos; //&#x9700;&#x8981;&#x5220;&#x9664;&#x7684;&#x5DE1;&#x68C0;&#x5355; id &#x6570;&#x7EC4; }
-</code></pre></li>
-<li><p><del>&#x8BE6;&#x60C5;&#x5165;&#x53E3;&#x754C;&#x9762;&#xFF08;&#x53C2;&#x8003;&#x5DE1;&#x68C0;&#x53D1;&#x5E03;&#xFF09;</del></p>
-</li>
-</ul>
-<h3 id="0716-&#x5468;&#x4E8C;"><strong>07.16 &#x5468;&#x4E8C;</strong></h3>
-<ul>
-<li>&#x5206;&#x9875; Key &#x503C;</li>
-</ul>
-<pre><code>   let baseParams = {
-      page: this.currentPage,
-      per_page: this.pageSize
-   };
-</code></pre><ul>
-<li>&#x4E0A;&#x4F20;&#x5DE1;&#x68C0;&#x5355;&#x63A5;&#x53E3;&#xFF1A;</li>
-</ul>
-<pre><code>   type: post
-   url: api/upload/doc
-   &#x8FD4;&#x56DE;&#x503C;&#xFF1A;{
-      file_name:&apos;&apos;, //&#x751F;&#x6210;&#x7684;&#x65B0;&#x6587;&#x4EF6;&#x540D;
-      file_path:&apos;&apos;, //&#x6587;&#x4EF6;&#x8DEF;&#x5F84;
-      file_originalname:&apos;&apos;, //&#x6587;&#x4EF6;&#x539F;&#x59CB;&#x540D;
-      file_extension:&apos;&apos;`
-   }
-</code></pre><ul>
-<li>&#x63D0;&#x4EA4;&#x5DE1;&#x68C0;&#x5355;&#x63A5;&#x53E3;&#xFF1A;</li>
-</ul>
-<pre><code>   type&#xFF1A;post
-   url&#xFF1A;api/inspectionfile
-   &#x53C2;&#x6570;&#xFF1A;{
-      inspection_name:&apos;&apos;, //&#x5DE1;&#x68C0;&#x5355;&#x540D;&#x79F0;
-      file:{
-      file_name:&apos;&apos;, //&#x751F;&#x6210;&#x7684;&#x65B0;&#x6587;&#x4EF6;&#x540D;
-      file_path:&apos;&apos;, //&#x6587;&#x4EF6;&#x8DEF;&#x5F84;
-      file_originalname:&apos;&apos;, //&#x6587;&#x4EF6;&#x539F;&#x59CB;&#x540D;
-      file_extension:&apos;&apos;
-      }
-   }
-</code></pre><ul>
-<li>&#x3010;&#x5DE1;&#x68C0;&#x5355;&#x65B0;&#x589E;&#x3011;<ul>
-<li>tab &#x754C;&#x9762;</li>
-<li>&#x4E0A;&#x4F20;&#x5DE1;&#x68C0;&#x5355;&#xFF1A;&#x521B;&#x5EFA;&#x5DE1;&#x68C0;&#x5355;</li>
-<li>&#x5DE1;&#x68C0;&#x5355;&#x5217;&#x8868;&#xFF1A;getList</li>
-<li>&#x5DE1;&#x68C0;&#x5355;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#xFF1A;upload</li>
-<li>&#x6587;&#x4EF6;&#x63D0;&#x4EA4;</li>
-</ul>
-</li>
-</ul>
-<h3 id="0715-&#x5468;&#x4E00;"><strong>07.15 &#x5468;&#x4E00;</strong></h3>
-<ul>
-<li><p>&#x6DFB;&#x52A0;&#x5DE1;&#x68C0;&#x5355;&#x3001;&#x663E;&#x793A;&#x5217;&#x8868;</p>
-<pre><code>  #&#x5DE1;&#x68C0;&#x5355;&#x5217;&#x8868;&#xFF1A;
-  url: /inspectionfile
-  type: get
-  #&#x5DE1;&#x68C0;&#x5355;&#x521B;&#x5EFA;&#xFF1A;
-  url: /inspectionfile
-  type: post
-  params: {inspection_name: &#x5DE1;&#x68C0;&#x540D;&#x79F0;}
-</code></pre></li>
-<li><p>&#x5220;&#x9664;&#xFF1A;&#x53EA;&#x80FD;&#x540C;&#x7EA7;&#x522B;&#x5220;&#x9664;&#xFF0C;&#x6839;&#x636E;&#x6C34;&#x5E73;&#x63A7;&#x5236;&#x5220;&#x9664;&#x6309;&#x94AE;&#x7684;&#x663E;&#x9690;&#x3002;</p>
-</li>
-<li><p>&#x5B8C;&#x6210; Tab &#x754C;&#x9762;&#xFF1A;
-&#x6B65;&#x9AA4;&#xFF1A;</p>
-<ul>
-<li>&#x754C;&#x9762;&#xFF08;&#x53C2;&#x8003;&#x6267;&#x6CD5;&#x56DE;&#x653E;&#xFF09;</li>
-<li>&#x8DEF;&#x7531;&#xFF08;&#x4FEE;&#x6539; ResourceRouter.js&#xFF0C;&#x53C2;&#x8003; EnforceLawRouter.js&#xFF09;</li>
-</ul>
-</li>
-</ul>
-<p><br>
-<br></p>
-<ul>
-<li><p>watch &#x56FE;&#x7247;&#x62A5;&#x9519;</p>
-<pre><code>php artisan storage:link
-</code></pre></li>
+<li>&#x5FEB;&#x901F;&#x8FC7;&#x4E00;&#x904D;laravel &#x6587;&#x6863;</li>
+<li>vue+larevel &#x91CD;&#x5199;&#x56FE;&#x4E66;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;</li>
 </ul>
 
                                 
@@ -502,7 +358,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TodoList","level":"2.1","depth":1,"next":{"title":"HTML","level":"2.2","depth":1,"path":"html.md","ref":"html.md","articles":[]},"previous":{"title":"Hotyan","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"todolist.md","mtime":"2019-07-30T09:21:21.127Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-15T07:47:45.977Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TodoList","level":"2.1","depth":1,"next":{"title":"HTML","level":"2.2","depth":1,"path":"html.md","ref":"html.md","articles":[]},"previous":{"title":"Hotyan","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"todolist.md","mtime":"2019-08-16T07:23:30.401Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-16T07:23:46.154Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
