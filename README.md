@@ -1,3 +1,3 @@
 # notes
 
-### [Notes地址](http://hotkang.cn/notes/)
+### [线上访问](http://hotkang.cn/notes/)
