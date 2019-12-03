@@ -445,8 +445,8 @@
  var bar2 = new foo(&apos;bar2.a&apos;);
  console.log(bar2.a)     // bar2.a ,&#x6784;&#x9020;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;
 </code></pre></li>
-<li><p>&#x7BAD;&#x5934;&#x51FD;&#x6570;&#xFF08;&#x62D3;&#x5C55;&#xFF09;
- &#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7684;this&#x7ED1;&#x5B9A;&#x53D6;&#x51B3;&#x4E8E;&#x5916;&#x5C42;&#xFF08;&#x51FD;&#x6570;&#x6216;&#x5168;&#x5C40;&#xFF09;&#x4F5C;&#x7528;&#x57DF;&#xFF1A;  </p>
+<li><p>&#x7BAD;&#x5934;&#x51FD;&#x6570;&#xFF08;&#x62D3;&#x5C55;&#xFF09;</p>
+<p> &#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7684;this&#x7ED1;&#x5B9A;&#x53D6;&#x51B3;&#x4E8E;&#x5916;&#x5C42;&#xFF08;&#x51FD;&#x6570;&#x6216;&#x5168;&#x5C40;&#xFF09;&#x4F5C;&#x7528;&#x57DF;&#xFF1A;  </p>
 <p> &#x2460;&#x6B63;&#x5E38;&#x8C03;&#x7528;&#xFF1A;</p>
 <pre><code> //&#x666E;&#x901A;&#x51FD;&#x6570;
  function foo(){     
@@ -504,9 +504,50 @@
 <blockquote>
 <h3 id="&#x51FD;&#x6570;&#x8C03;&#x7528;20191203">&#x51FD;&#x6570;&#x8C03;&#x7528;[2019.12.03]</h3>
 </blockquote>
-<p>4&#x79CD;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#xFF0C;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#x3001;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#x3001;&#x6784;&#x9020;&#x5668;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#x3001;&#x95F4;&#x63A5;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#xFF1A;</p>
+<p>4&#x79CD;&#x8C03;&#x7528;&#x6A21;&#x5F0F;: &#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#x3001;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#x3001;&#x6784;&#x9020;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#x3001;&#x95F4;&#x63A5;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#x3002;</p>
 <ol>
-<li>&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;</li>
+<li><p>&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;</p>
+<pre><code> function foo(){
+     console.log(this.a)
+ }
+ var a = &apos;window.a&apos;
+ foo()           //window.a ,&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;
+</code></pre></li>
+<li><p>&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x6A21;&#x5F0F;</p>
+<p> &#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x88AB;&#x4FDD;&#x5B58;&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x79F0;&#x5B83;&#x4E3A;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;&#x5F53;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#xFF0C;this&#x88AB;&#x7ED1;&#x5B9A;&#x5230;&#x8BE5;&#x5BF9;&#x8C61;&#x3002;&#x5982;&#x679C;&#x8C03;&#x7528;&#x8868;&#x8FBE;&#x5F0F;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x63D0;&#x53D6;&#x5C5E;&#x6027;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5C31;&#x662F;&#x88AB;&#x5F53;&#x505A;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code> function foo(){
+     console.log(this.a)
+ }
+ var a = &apos;window.a&apos;
+ var obj = {
+     a: &apos;obj.a&apos;,      
+     foo: foo
+ }
+ obj.foo()       //obj.a ,&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x6A21;&#x5F0F;
+</code></pre></li>
+<li><p>&#x6784;&#x9020;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;</p>
+<p> &#x51FD;&#x6570;&#x6216;&#x8005;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E4B;&#x524D;&#x5E26;&#x6709;&#x5173;&#x952E;&#x5B57;new&#xFF0C;&#x5B83;&#x5C31;&#x6784;&#x6210;&#x6784;&#x9020;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code> function foo(a) { 
+     this.a = a;
+ }
+ var a = &apos;window.a&apos;
+ var bar1 = new foo(&apos;bar1.a&apos;);
+ console.log(bar1.a)     // bar1.a ,&#x6784;&#x9020;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;
+</code></pre></li>
+<li><p>&#x95F4;&#x63A5;&#x8C03;&#x7528;&#x6A21;&#x5F0F;</p>
+<pre><code> function foo(){
+     console.log(this.a)
+ }
+ var a = &apos;window.a&apos;
+ var obj1 = {
+     a: &apos;obj1.a&apos;
+ }
+ var obj2 = {
+     a: &apos;obj2.a&apos;
+ }
+ foo.call(obj1)      //obj1.a ,&#x95F4;&#x63A5;&#x8C03;&#x7528;&#x51FD;&#x6570;
+ foo.apply(obj2)      //obj2.a ,&#x95F4;&#x63A5;&#x8C03;&#x7528;&#x51FD;&#x6570;
+</code></pre></li>
 </ol>
 <p><br></p>
 <blockquote>
@@ -1011,7 +1052,7 @@ console.log(unique(arr));   // [1, 2,&quot;1&quot;]
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JavaScript","level":"2.1","depth":1,"next":{"title":"Vue","level":"2.2","depth":1,"path":"vue.md","ref":"vue.md","articles":[]},"previous":{"title":"Hotyan","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"javascript.md","mtime":"2019-12-03T08:05:38.363Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-03T02:17:22.675Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JavaScript","level":"2.1","depth":1,"next":{"title":"Vue","level":"2.2","depth":1,"path":"vue.md","ref":"vue.md","articles":[]},"previous":{"title":"Hotyan","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"javascript.md","mtime":"2019-12-03T09:11:06.153Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-03T02:17:22.675Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
