@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="storage.html" />
+    <link rel="next" href="vue.html" />
     
     
-    <link rel="prev" href="css.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -109,38 +109,38 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="practice.html">
+        <li class="chapter active" data-level="2.1" data-path="javascript.html">
+            
+                <a href="javascript.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="vue.html">
+            
+                <a href="vue.html">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="practice.html">
             
                 <a href="practice.html">
             
                     
                     Practice
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2" data-path="todolist.html">
-            
-                <a href="todolist.html">
-            
-                    
-                    TodoList
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3" data-path="laravel.html">
-            
-                <a href="laravel.html">
-            
-                    
-                    Laravel
             
                 </a>
             
@@ -174,20 +174,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.6" data-path="javascript.html">
-            
-                <a href="javascript.html">
-            
-                    
-                    JavaScript
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.7" data-path="storage.html">
+        <li class="chapter " data-level="2.6" data-path="storage.html">
             
                 <a href="storage.html">
             
@@ -200,7 +187,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.8" data-path="http.md">
+        <li class="chapter " data-level="2.7" data-path="http.md">
             
                 <span>
             
@@ -213,7 +200,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.9" data-path="CrossDomain.md">
+        <li class="chapter " data-level="2.8" data-path="CrossDomain.md">
             
                 <span>
             
@@ -226,7 +213,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.10" data-path="safe.md">
+        <li class="chapter " data-level="2.9" data-path="safe.md">
             
                 <span>
             
@@ -239,7 +226,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.11" data-path="sort.md">
+        <li class="chapter " data-level="2.10" data-path="sort.md">
             
                 <span>
             
@@ -252,7 +239,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.12" data-path="render.md">
+        <li class="chapter " data-level="2.11" data-path="render.md">
             
                 <span>
             
@@ -265,12 +252,25 @@
             
         </li>
     
-        <li class="chapter " data-level="2.13" data-path="performance.md">
+        <li class="chapter " data-level="2.12" data-path="performance.md">
             
                 <span>
             
                     
                     性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="laravel.html">
+            
+                <a href="laravel.html">
+            
+                    
+                    Laravel
             
                 </a>
             
@@ -339,6 +339,275 @@
                                 <h2 id="js">JS</h2>
 <hr>
 <blockquote>
+<h3 id="js&#x7684;this&#x56DB;&#x79CD;&#x7ED1;&#x5B9A;&#x89C4;&#x5219;20191203">JS&#x7684;<code>this</code>&#x56DB;&#x79CD;&#x7ED1;&#x5B9A;&#x89C4;&#x5219;[2019.12.03]</h3>
+</blockquote>
+<p>&#x4F18;&#x5148;&#x7EA7;&#x4ECE;&#x4F4E;&#x5230;&#x9AD8;,&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;&#x3001;&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;&#x3001;&#x663E;&#x793A;&#x7ED1;&#x5B9A;&#x3001;new&#x7ED1;&#x5B9A;:</p>
+<ol>
+<li><p>&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;</p>
+<pre><code> function foo(){
+     console.log(this.a)
+ }
+ var a = &apos;window.a&apos;
+ foo()           //window.a,&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;
+</code></pre><p> &#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x5C06;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;&#xFF0C;&#x5373;&#x6267;&#x884C;&#x4F1A;&#x62A5;undefined&#x7684;&#x9519;&#x8BEF;:</p>
+<pre><code> function foo(){
+     &quot;use strict&quot;
+     console.log(this.a)
+ }
+ var a = &apos;window.a&apos;
+ foo()           //Uncaught TypeError: Cannot read property &apos;a&apos; of undefined,&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;
+</code></pre></li>
+<li><p>&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;</p>
+<p> &#x9664;&#x76F4;&#x63A5;&#x5BF9;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x8C03;&#x7528;&#x5916;&#xFF0C;&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#xFF0C;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x662F;&#x5728;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0A;&#x89E6;&#x53D1;&#x7684;&#xFF0C;&#x5373;&#x8C03;&#x7528;&#x4F4D;&#x7F6E;&#x4E0A;&#x5B58;&#x5728;&#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre><code> function foo(){
+     console.log(this.a)
+ }
+ var a = &apos;window.a&apos;
+ var obj = {
+     a: &apos;obj.a&apos;,      
+     foo: foo
+ }
+ obj.foo()       //obj.a,&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x6A21;&#x5F0F;
+</code></pre><p> &#x591A;&#x5C42;&#x8C03;&#x7528;&#x94FE;&#xFF1A;</p>
+<pre><code> function foo(){
+     console.log(this.a)
+ }
+ var a = &apos;window.a&apos;
+ var obj1 = {
+     a: &apos;obj1.a&apos;,     
+     foo1: foo
+ }
+ var obj2 = {
+     a: &apos;obj2.a&apos;,     
+     foo2: obj1
+ }
+ obj2.foo2.foo1()       //obj1.a,&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x6A21;&#x5F0F;
+</code></pre><p> &#x51FD;&#x6570;&#x522B;&#x540D;&#xFF08;&#x9690;&#x5F0F;&#x4E22;&#x5931;&#xFF09;&#xFF1A;</p>
+<pre><code> function foo(){
+     console.log(this.a)
+ }
+ var a = &apos;window.a&apos;
+ var obj = {
+     a: &apos;obj.a&apos;,     
+     foo: foo
+ }
+ var bar = obj.foo   //obj.foo&#x662F;&#x5F15;&#x7528;&#x5C5E;&#x6027;&#xFF0C;&#x8D4B;&#x503C;&#x7ED9;bar&#x7684;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;foo&#x51FD;&#x6570;
+ bar()     //window.a,&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;
+</code></pre><p> &#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF08;&#x9690;&#x5F0F;&#x4E22;&#x5931;&#xFF09;&#xFF1A;</p>
+<pre><code> function foo(){
+     console.log(this.a)
+ }
+ var a = &apos;window.a&apos;
+ var obj = {
+     a: &apos;obj.a&apos;,      
+     foo: foo
+ }
+ setTimeout(obj.foo,100)      //window.a,&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;
+</code></pre></li>
+<li><p>&#x663E;&#x793A;&#x7ED1;&#x5B9A;</p>
+<p> &#x901A;&#x8FC7;&#x6539;&#x53D8;&#x5BF9;&#x8C61;&#x7684;prototype&#x5173;&#x8054;&#x5BF9;&#x8C61;&#xFF0C;call&#x548C;apply&#x4F5C;&#x7528;&#x4E00;&#x6837;&#xFF0C;&#x533A;&#x522B;&#x662F;&#x63A5;&#x53D7;&#x53C2;&#x6570;&#x65B9;&#x5F0F;&#x4E0D;&#x540C;&#xFF1A;</p>
+<pre><code> function foo(){
+     console.log(this.a)
+ }
+ var a = &apos;window.a&apos;
+ var obj1 = {
+     a: &apos;obj1.a&apos;
+ }
+ var obj2 = {
+     a: &apos;obj2.a&apos;
+ }
+ foo.call(obj1)      //obj1.a ,&#x95F4;&#x63A5;&#x8C03;&#x7528;&#x51FD;&#x6570;
+ foo.apply(obj2)      //obj2.a ,&#x95F4;&#x63A5;&#x8C03;&#x7528;&#x51FD;&#x6570;
+</code></pre><p> &#x786C;&#x7ED1;&#x5B9A;&#xFF1A;</p>
+<pre><code> function foo(){
+     console.log(this.a)
+ }
+ var a = &apos;window.a&apos;
+ var obj1 = {
+     a: &apos;obj1.a&apos;
+ }
+ var obj2 = {
+     a: &apos;obj2.a&apos;
+ }
+ var bar = function(){
+     foo.call(obj1)  //foo&#x5DF2;&#x7ECF;&#x663E;&#x793A;&#x7ED1;&#x5B9A;&#x4E86;obj1&#xFF0C;this&#x6307;&#x5411;obj1.
+ }
+ setTimeout(bar ,100)    //obj1.a ,&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;
+ bar.call(obj2)      //obj1.a , &#x95F4;&#x63A5;&#x8C03;&#x7528;&#x51FD;&#x6570;
+</code></pre></li>
+<li><p>new &#x7ED1;&#x5B9A;</p>
+<pre><code> function foo(a) { 
+     this.a = a;
+ }
+ var a = &apos;window.a&apos;
+ var bar1 = new foo(&apos;bar1.a&apos;);
+ console.log(bar1.a)     // bar1.a ,&#x6784;&#x9020;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;
+ var bar2 = new foo(&apos;bar2.a&apos;);
+ console.log(bar2.a)     // bar2.a ,&#x6784;&#x9020;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;
+</code></pre></li>
+<li><p>&#x7BAD;&#x5934;&#x51FD;&#x6570;&#xFF08;&#x62D3;&#x5C55;&#xFF09;
+ &#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7684;this&#x7ED1;&#x5B9A;&#x53D6;&#x51B3;&#x4E8E;&#x5916;&#x5C42;&#xFF08;&#x51FD;&#x6570;&#x6216;&#x5168;&#x5C40;&#xFF09;&#x4F5C;&#x7528;&#x57DF;&#xFF1A;  </p>
+<p> &#x2460;&#x6B63;&#x5E38;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code> //&#x666E;&#x901A;&#x51FD;&#x6570;
+ function foo(){     
+     console.log( this.a );
+ }
+ var a = &apos;window.a&apos;
+ var obj = { 
+     a: &apos;obj.a&apos;,
+     foo: foo 
+ };
+ obj.foo();      //obj.a
+
+ //&#x7BAD;&#x5934;&#x51FD;&#x6570;
+ var foo = ()=&gt;{     
+     console.log( this.a );
+ }
+ var a = &apos;window.a&apos;
+ var obj = { 
+     a: &apos;obj.a&apos;,
+     foo: foo 
+ };
+ obj.foo();      //window.a
+ foo.call(obj)   //window.a
+</code></pre><p> &#x2461;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code> //&#x666E;&#x901A;&#x51FD;&#x6570;
+ function foo(){ 
+     return function(){
+         console.log( this.a );
+     }   
+ }
+ var a = &apos;window.a&apos;
+ var obj = { 
+     a: &apos;obj.a&apos;,
+     foo: foo 
+ };
+ var bar = obj.foo();
+ bar();      //window.a
+
+ //&#x7BAD;&#x5934;&#x51FD;&#x6570;
+ var foo = ()=&gt;{ 
+     return function(){
+         console.log( this.a );
+     }   
+ }
+ var a = &apos;window.a&apos;
+ var obj = { 
+     a: &apos;obj.a&apos;,
+     foo: foo 
+ };
+ var bar = obj.foo();
+ bar();      //obj.a
+</code></pre></li>
+</ol>
+<p><br></p>
+<blockquote>
+<h3 id="&#x51FD;&#x6570;&#x8C03;&#x7528;20191203">&#x51FD;&#x6570;&#x8C03;&#x7528;[2019.12.03]</h3>
+</blockquote>
+<p>4&#x79CD;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#xFF0C;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#x3001;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#x3001;&#x6784;&#x9020;&#x5668;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#x3001;&#x95F4;&#x63A5;&#x8C03;&#x7528;&#x6A21;&#x5F0F;&#xFF1A;</p>
+<ol>
+<li>&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6A21;&#x5F0F;</li>
+</ol>
+<p><br></p>
+<blockquote>
+<h3 id="js&#x7684;new&#x64CD;&#x4F5C;&#x7B26;20191202">JS&#x7684;<code>New</code>&#x64CD;&#x4F5C;&#x7B26;[2019.12.02]</h3>
+</blockquote>
+<p><code>new</code>&#x64CD;&#x4F5C;&#x7B26;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x539F;&#x578B;&#x6307;&#x5411;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;<code>prototype</code>,&#x6267;&#x884C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x540E;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre><code>var Func = function(){}  //&#x58F0;&#x660E;&#x6784;&#x9020;&#x51FD;&#x6570;Fun
+var func = new Func()     //&#x65B0;&#x5EFA;&#x5B9E;&#x4F8B;fun
+</code></pre><ol>
+<li><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x5BF9;&#x8C61;</p>
+<pre><code> var obj = new Object()
+</code></pre></li>
+<li><p>&#x94FE;&#x63A5;&#x5230;&#x539F;&#x578B;</p>
+<pre><code> //&#x5F53;&#x8C03;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x540E;&#xFF0C;&#x5B9E;&#x4F8B;&#x5185;&#x90E8;&#x5C06;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#xFF08;&#x5185;&#x90E8;&#x5C5E;&#x6027;__proto__&#xFF09;&#x6307;&#x5411;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x539F;&#x578B;&#x5BF9;&#x8C61;
+ obj.__proto__ = Func.prototype
+</code></pre></li>
+<li><p>&#x7ED1;&#x5B9A;<code>this</code>&#x6307;&#x5411;&#xFF0C;&#x6267;&#x884C;&#x6784;&#x9020;&#x51FD;&#x6570;</p>
+<pre><code> //&#x521B;&#x5EFA;&#x65B0;&#x5BF9;&#x8C61;&#x540E;&#xFF0C;&#x5C06;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x8D4B;&#x7ED9;&#x65B0;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x6B64;this&#x5C31;&#x6307;&#x5411;&#x4E86;&#x8FD9;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;
+ var result = Func.call(obj)
+</code></pre></li>
+<li><p>&#x786E;&#x4FDD;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x5BF9;&#x8C61;</p>
+<pre><code> if(typeof(result) ==&quot;object&quot;){//&#x5224;&#x65AD;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;
+     func = result    //&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;
+ }else {
+     func = obj       //&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x8FD4;&#x56DE;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;obj
+ }
+</code></pre></li>
+</ol>
+<p><br></p>
+<blockquote>
+<h3 id="typeof&#x8FD4;&#x56DE;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7C7B;&#x578B;20191202">typeof&#x8FD4;&#x56DE;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7C7B;&#x578B;[2019.12.02]</h3>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x7C7B;&#x578B;</th>
+<th style="text-align:center">&#x7ED3;&#x679C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Undefined</td>
+<td style="text-align:center">&apos;undefined&apos;</td>
+</tr>
+<tr>
+<td style="text-align:center">Null</td>
+<td style="text-align:center">&apos;null&apos;</td>
+</tr>
+<tr>
+<td style="text-align:center">Boolean</td>
+<td style="text-align:center">&apos;boolean&apos;</td>
+</tr>
+<tr>
+<td style="text-align:center">Number</td>
+<td style="text-align:center">&apos;number&apos;</td>
+</tr>
+<tr>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&apos;string&apos;</td>
+</tr>
+<tr>
+<td style="text-align:center">BigInt</td>
+<td style="text-align:center">&apos;bigint&apos;</td>
+</tr>
+<tr>
+<td style="text-align:center">Symbol</td>
+<td style="text-align:center">&apos;symbol&apos;</td>
+</tr>
+<tr>
+<td style="text-align:center">Function</td>
+<td style="text-align:center">&apos;function&apos;</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x5176;&#x4ED6;&#x4EFB;&#x4F55;&#x5BF9;&#x8C61;</td>
+<td style="text-align:center">&apos;object&apos;</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;&#xFF08;&#x7531;JS&#x73AF;&#x5883;&#x63D0;&#x4F9B;&#xFF09;</td>
+<td style="text-align:center">&#x53D6;&#x51B3;&#x4E8E;&#x5177;&#x4F53;&#x5B9E;&#x73B0;</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>Null</p>
+<pre><code> typeof null === &apos;object&apos;
+</code></pre><p> JS&#x8BDE;&#x751F;&#x4EE5;&#x6765;&#x4FBF;&#x662F;&#x5982;&#x6B64;,&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#xFF0C;&#x5F88;&#x9057;&#x61BE;&#x65E0;&#x6CD5;&#x4FEE;&#x590D;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4F1A;&#x7834;&#x574F;&#x73B0;&#x6709;&#x4EE3;&#x7801;&#x3002;&#x5728;js&#x6700;&#x521D;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;js&#x4E2D;&#x7684;&#x503C;&#x662F;&#x7531;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x7C7B;&#x578B;&#x7684;&#x6807;&#x7B7E;&#x548C;&#x5B9E;&#x9645;&#x6570;&#x636E;&#x503C;&#x8868;&#x793A;&#x7684;&#xFF0C;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x6807;&#x7B7E;&#x662F;0&#x3002;&#x7531;&#x4E8E;<code>Null</code>&#x4EE3;&#x8868;&#x7A7A;&#x6307;&#x9488;&#xFF0C;&#x56E0;&#x6B64;<code>Null</code>&#x7684;&#x7C7B;&#x578B;&#x6807;&#x7B7E;&#x662F;0&#xFF0C;<code>typeof null</code>&#x56E0;&#x6B64;&#x8FD4;&#x56DE;<code>&apos;object&apos;</code>&#x3002;&#xFF08;<a href="https://2ality.com/2013/10/typeof-null.html" target="_blank">&#x53C2;&#x8003;&#x94FE;&#x63A5;</a>&#xFF09;</p>
+</li>
+<li><p>Function</p>
+<pre><code> var str = new String(&apos;123&apos;)
+ var num = new Number(100)
+
+ typeof(str) //&apos;object&apos;
+ typeof(num) //&apos;object&apos;
+
+ var func = new Function()
+ typeof(func) //&apos;function&apos;
+</code></pre><p> &#x9664;Function&#x5916;&#x7684;&#x6240;&#x6709;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x90FD;&#x662F;<code>&apos;object&apos;</code>&#x3002;</p>
+</li>
+</ol>
+<p><br></p>
+<blockquote>
 <h3 id="js&#x5B9A;&#x4E49;">JS&#x5B9A;&#x4E49;</h3>
 </blockquote>
 <ul>
@@ -390,17 +659,6 @@
 </ol>
 <p><br></p>
 <blockquote>
-<h3 id="typeof&#x8FD4;&#x56DE;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7C7B;&#x578B;">typeof&#x8FD4;&#x56DE;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7C7B;&#x578B;</h3>
-</blockquote>
-<ul>
-<li>Object(null)</li>
-<li>number</li>
-<li>function</li>
-<li>boolean</li>
-<li>undefind</li>
-</ul>
-<p><br></p>
-<blockquote>
 <h3 id="3&#x79CD;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;">3&#x79CD;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</h3>
 </blockquote>
 <ul>
@@ -431,7 +689,7 @@
 <h3 id="null&#x548C;undefined&#x7684;&#x533A;&#x522B;&#xFF1F;">null&#x548C;undefined&#x7684;&#x533A;&#x522B;&#xFF1F;</h3>
 </blockquote>
 <ul>
-<li><p>NULL </p>
+<li><p>Null </p>
 <ul>
 <li>null&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x201D;&#x65E0;&#x201D;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x8F6C;&#x4E3A;&#x6570;&#x503C;&#x65F6;&#x4E3A;0;  </li>
 <li>null&#x8868;&#x793A;&#x201D;&#x6CA1;&#x6709;&#x5BF9;&#x8C61;&#x201D;&#xFF0C;&#x5373;&#x8BE5;&#x5904;&#x4E0D;&#x5E94;&#x8BE5;&#x6709;&#x503C;;<ul>
@@ -441,7 +699,7 @@
 </li>
 </ul>
 </li>
-<li><p>undefined</p>
+<li><p>Undefined</p>
 <ul>
 <li>undefined&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x201D;&#x65E0;&#x201D;&#x7684;&#x539F;&#x59CB;&#x503C;&#xFF0C;&#x8F6C;&#x4E3A;&#x6570;&#x503C;&#x65F6;&#x4E3A;NaN&#x3002;  </li>
 <li><p>undefined&#x8868;&#x793A;&#x201D;&#x7F3A;&#x5C11;&#x503C;&#x201D;&#xFF0C;&#x5C31;&#x662F;&#x6B64;&#x5904;&#x5E94;&#x8BE5;&#x6709;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;  </p>
@@ -737,12 +995,12 @@ console.log(unique(arr));   // [1, 2,&quot;1&quot;]
 
             
                 
-                <a href="css.html" class="navigation navigation-prev " aria-label="Previous page: CSS">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Hotyan">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="storage.html" class="navigation navigation-next " aria-label="Next page: 浏览器存储">
+                <a href="vue.html" class="navigation navigation-next " aria-label="Next page: Vue">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -753,7 +1011,7 @@ console.log(unique(arr));   // [1, 2,&quot;1&quot;]
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JavaScript","level":"2.6","depth":1,"next":{"title":"浏览器存储","level":"2.7","depth":1,"path":"storage.md","ref":"storage.md","articles":[]},"previous":{"title":"CSS","level":"2.5","depth":1,"path":"css.md","ref":"css.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"javascript.md","mtime":"2019-03-28T07:17:42.726Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-18T08:23:59.571Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JavaScript","level":"2.1","depth":1,"next":{"title":"Vue","level":"2.2","depth":1,"path":"vue.md","ref":"vue.md","articles":[]},"previous":{"title":"Hotyan","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"javascript.md","mtime":"2019-12-03T08:05:38.363Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-03T02:17:22.675Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
