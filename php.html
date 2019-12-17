@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="hyperf.html" />
     
-    <link rel="prev" href="laravel.html" />
+    
+    <link rel="prev" href="performance.md" />
     
 
     </head>
@@ -263,12 +265,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.13" data-path="laravel.html">
+        <li class="chapter active" data-level="2.13" data-path="php.html">
             
-                <a href="laravel.html">
+                <a href="php.html">
             
                     
-                    Laravel
+                    PHP
             
                 </a>
             
@@ -276,12 +278,25 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.14" data-path="php.html">
+        <li class="chapter " data-level="2.14" data-path="hyperf.html">
             
-                <a href="php.html">
+                <a href="hyperf.html">
             
                     
-                    PHP
+                    Hyperf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="laravel.html">
+            
+                <a href="laravel.html">
+            
+                    
+                    Laravel
             
                 </a>
             
@@ -334,8 +349,37 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="php">PHP</h2>
-<hr>
+                                <h1 id="php">PHP</h1>
+<h2 id="&#x63A7;&#x5236;&#x53CD;&#x8F6C;--&#x4F9D;&#x8D56;&#x6CE8;&#x5165;20191203">&#x63A7;&#x5236;&#x53CD;&#x8F6C; &amp; &#x4F9D;&#x8D56;&#x6CE8;&#x5165;[2019.12.03]</h2>
+<blockquote>
+<h3 id="&#x63A7;&#x5236;&#x53CD;&#x8F6C;&#xFF08;inversion-of-control&#xFF0C;ioc&#xFF09;">&#x63A7;&#x5236;&#x53CD;&#x8F6C;&#xFF08;Inversion of Control&#xFF0C;IoC&#xFF09;</h3>
+</blockquote>
+<ul>
+<li>&#x662F;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#x7684;&#x4E00;&#x79CD;<code>&#x8BBE;&#x8BA1;&#x539F;&#x5219;</code>&#xFF1B;</li>
+<li>&#x7528;&#x6765;&#x51CF;&#x4F4E;&#x8BA1;&#x7B97;&#x673A;&#x4EE3;&#x7801;&#x4E4B;&#x95F4;&#x7684;<code>&#x8026;&#x5408;&#x5EA6;</code>&#xFF1B;</li>
+<li>&#x5E38;&#x89C1;&#x65B9;&#x5F0F;&#xFF1A;<code>&#x4F9D;&#x8D56;&#x6CE8;&#x5165;(Dependency Injection,DI)</code>&#xFF0C;&#x4F9D;&#x8D56;&#x67E5;&#x627E;(Dependency Lookup);</li>
+<li>&#x901A;&#x8FC7;&#x63A7;&#x5236;&#x53CD;&#x8F6C;&#xFF0C;&#x5BF9;&#x8C61;&#x5728;&#x88AB;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7531;&#x4E00;&#x4E2A;&#x8C03;&#x63A7;&#x7CFB;&#x7EDF;&#x5185;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x7684;&#x5916;&#x754C;&#x5B9E;&#x4F53;&#xFF0C;&#x5C06;&#x5176;&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x4F20;&#x9012;&#xFF08;&#x6CE8;&#x5165;&#xFF09;&#x7ED9;&#x5B83;&#x3002;</li>
+</ul>
+<p><br></p>
+<blockquote>
+<h3 id="&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF08;dependency-injection&#xFF0C;di&#xFF09;">&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF08;Dependency Injection&#xFF0C;DI&#xFF09;</h3>
+</blockquote>
+<ul>
+<li>&#x662F;&#x79CD;&#x5B9E;&#x73B0;&#x63A7;&#x5236;&#x53CD;&#x8F6C;&#x7528;&#x4E8E;<code>&#x89E3;&#x51B3;&#x4F9D;&#x8D56;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</code>&#xFF0C;&#x4E00;&#x4E2A;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x6307;&#x7684;&#x662F;&#x53EF;&#x88AB;&#x5229;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x5C06;&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x4F20;&#x9012;&#x7ED9;&#x5C06;&#x4F7F;&#x7528;&#x7684;&#x4ECE;&#x5C5E;&#x5BF9;&#x8C61;&#x3002;</li>
+</ul>
+<pre><code>//////////            //////////
+// &#x5BF9;&#x8C61; // &lt;--IoC---  //&#x5916;&#x90E8;&#x8D44;&#x6E90;//
+/////////            ///////////
+</code></pre><p><br></p>
+<blockquote>
+<h3 id="3&#x53C2;&#x8003;&#x94FE;&#x63A5;">3.&#x53C2;&#x8003;&#x94FE;&#x63A5;</h3>
+</blockquote>
+<ul>
+<li><a href="https://learnku.com/laravel/t/3845/the-two-picture-lets-you-understand-ioc-inversion-of-control" target="_blank">&#x4E24;&#x5F20;&#x56FE;&#x8BA9;&#x4F60;&#x7406;&#x89E3; IoC</a></li>
+<li><a href="https://www.ctolib.com/topics-20373.html" target="_blank">&#x7406;&#x89E3;php&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x548C;&#x63A7;&#x5236;&#x53CD;&#x8F6C;</a></li>
+</ul>
+<p><br></p>
 <h3 id="php&#x8BED;&#x6CD5;">PHP&#x8BED;&#x6CD5;</h3>
 <ul>
 <li><p>&#x6240;&#x6709;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x7C7B;&#x548C;&#x5173;&#x952E;&#x5B57;&#x5927;&#x5C0F;&#x5199;&#x4E0D;&#x654F;&#x611F;</p>
@@ -540,10 +584,14 @@
 
             
                 
-                <a href="laravel.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Laravel">
+                <a href="performance.md" class="navigation navigation-prev " aria-label="Previous page: 性能">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="hyperf.html" class="navigation navigation-next " aria-label="Next page: Hyperf">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -552,7 +600,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"PHP","level":"2.14","depth":1,"previous":{"title":"Laravel","level":"2.13","depth":1,"path":"laravel.md","ref":"laravel.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"php.md","mtime":"2019-03-28T07:33:52.673Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-03T02:17:22.675Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"PHP","level":"2.13","depth":1,"next":{"title":"Hyperf","level":"2.14","depth":1,"path":"hyperf.md","ref":"hyperf.md","articles":[]},"previous":{"title":"性能","level":"2.12","depth":1,"path":"performance.md","ref":"performance.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"php.md","mtime":"2019-12-17T09:40:52.215Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-17T09:24:30.378Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
